@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
 <script src="HTML/JavaScript/generales.js" ></script>
 
-<link rel="stylesheet" href="assets/tether/tether.min.css" />
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css"/>
-<link rel="stylesheet" href="assets/dropdown/css/style.css" />
-<link rel="stylesheet" href="assets/socicon/css/styles.css"/>
-<link rel="stylesheet" href="assets/data-tables/data-tables.bootstrap4.min.css"/>
-<link rel="stylesheet" href="assets/animate.css/animate.min.css"/>
+<link rel="stylesheet" href="assets/tether/tether.min.css" >
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" href="assets/dropdown/css/style.css" >
+<link rel="stylesheet" href="assets/socicon/css/styles.css">
+<link rel="stylesheet" href="assets/data-tables/data-tables.bootstrap4.min.css">
+<link rel="stylesheet" href="assets/animate.css/animate.min.css">

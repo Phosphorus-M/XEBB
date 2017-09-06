@@ -1,4 +1,4 @@
-function goLogin() {
+function goLogin(connected, we_are_redirecting_you, processing, we_are_connecting_you) {
     var connect, form, response, result, user, pass, session;
     user = __('user_login').value;
     pass = __('pass_login').value;
@@ -9,8 +9,8 @@ function goLogin() {
     	if(connect.readyState == 4 && connect.status == 200){
     		if(connect.responseText == 1){
 	        	result = '<div class="alert alert-dismissible alert-success">';
-	        	result += '<h4>Conectado</h4>';
-	          	result += '<p><strong>Te estamos redireccionando...</strong></p>';
+	        	result += '<h4>'+ connected +'</h4>';
+	          	result += '<p><strong>'+ we_are_redirecting_you +'</strong></p>';
 	        	result += '</div>';
 				__('_AJAX_LOGIN_').innerHTML = result;
 				location.reload();
@@ -21,8 +21,8 @@ function goLogin() {
     	}else if(connect.readyState != 4){
         	result = '<div class="alert alert-dismissible alert-warning">';
         	result += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-        	result += '<h4>Procesando...</h4>';
-          	result += '<p><strong>Estamos conectandote...</strong></p>';
+        	result += '<h4>'+ processing +'</h4>';
+          	result += '<p><strong>'+ we_are_connecting_you +'</strong></p>';
         	result += '</div>';
         	__('_AJAX_LOGIN_').innerHTML = result;
     	}

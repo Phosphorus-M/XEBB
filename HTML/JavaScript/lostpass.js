@@ -1,4 +1,4 @@
-function goLostpass() {
+function goLostpass(check_your_email,) {
     var connect, form, response, result, email;
     email = __('email_lostpass').value;
     if(email != ''){
@@ -8,8 +8,8 @@ function goLostpass() {
             if(connect.readyState == 4 && connect.status == 200){
                 if(connect.responseText == 1){
                     result = '<div class="alert alert-dismissible alert-success">';
-                    result += '<h4>Revisa tu correo</h4>';
-                    result += '<p><strong>Te hemos mandado el link para adquirir una nueva contraseña a tu mail...</strong></p>';
+                    result += '<h4>'+ check_your_email +'</h4>';
+                    result += '<p><strong>'+ acquire_a_new_password +'</strong></p>';
                     result += '</div>';
                     __('_AJAX_LOSTPASS_').innerHTML = result;
                     location.reload();

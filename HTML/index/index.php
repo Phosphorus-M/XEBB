@@ -2,7 +2,20 @@
 <html>
 <?php include 'HTML/Overall/header.php'; ?>
 <body>
-<?php include 'HTML/Overall/navbar.php';
+<?php
+if(file_exists('language/'.substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0,2).'/')){
+  $language = 'language/'.substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0,2);
+}else {
+  $language = 'language/en';
+}
+if(isset($_GET['view'])){
+  if(file_exists('core/controllers/' . strtolower($_GET['view']) . 'Controller.php')){
+    include $language.'/'. strtolower($_GET['view']) .'.php';
+  }
+} else {
+  include $language.'/index.php';
+}
+include 'HTML/Overall/navbar.php';
 include 'HTML/Overall/container.php';
 include 'HTML/Overall/footer.php';
 ?>

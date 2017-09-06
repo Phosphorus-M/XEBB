@@ -19,7 +19,7 @@
                               </li>';*/ ?>
                               <li class="mbr-navbar__item">
                                 <a class="mbr-buttons__link btn text-white" href="?view=index">
-                                  <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>&nbsp;Inicio
+                                  <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>&nbsp;<?php echo $lang['Home'];?>
                                 </a>
                               </li>
                               <li class="mbr-navbar__item">
@@ -31,27 +31,27 @@
                               <?php if(!isset($_SESSION['forum_id'])){
                                 echo '<li class="mbr-navbar__item">
                                   <a class="mbr-buttons__btn btn btn-danger" data-toggle="modal" data-target="#Register" href="">
-                                    Registrarse
+                                    '. $lang['register'] .'
                                   </a>
                                 </li>
                                 <li class="mbr-navbar__item">
                                   <a class="mbr-buttons__link btn text-white" data-toggle="modal" data-target="#Login" href="">
-                                    <span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>&nbsp;Iniciar Session
+                                    <span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>&nbsp;'.$lang['login'].'
                                   </a>
                                 </li>';
                             }else{
                               echo '<li class="mbr-navbar__item">
                               <a class="mbr-buttons__link btn text-white" href="" >
-                  <span class="mbri-users mbr-iconfont mbr-iconfont-btn"></span>&nbsp;Cuenta</a>
+                  <span class="mbri-users mbr-iconfont mbr-iconfont-btn"></span>&nbsp;'.$lang['Account'].'</a>
                             </li>
                             <li class="mbr-navbar__item">
                               <a class="mbr-buttons__link btn text-white" href="">
-                                Ver Perfil
+                                '. $lang['view_profile'].'
                               </a>
                             </li>
                             <li class="mbr-navbar__item">
                               <a class="mbr-buttons__link btn text-white" href="?view=logout">
-                                Desconectarse
+                                '.$lang['logout'].'
                               </a>
                             </li>';
                               }
@@ -66,8 +66,8 @@
 </section>
 <?php
 if(!isset($_SESSION['forum_id'])){
-include(HTML_DIR .'/SESSION/login.html');
-include(HTML_DIR .'/SESSION/reg.html');
-include(HTML_DIR .'/SESSION/lostpass.html');
+include(HTML_DIR .'/SESSION/login.php');
+include(HTML_DIR .'/SESSION/reg.php');
+include(HTML_DIR .'/SESSION/lostpass.php');
 }
  ?>

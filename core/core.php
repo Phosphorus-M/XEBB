@@ -14,10 +14,8 @@ define('DB_NAME', 'XEBB');
 define('HTML_DIR', 'HTML/');
 define('FORUM_NAME', 'XEBB');
 define('YEAR', date('Y', time()));
-define('BASE_DESCRIPTION', 'XEBB es un sistema de foros complejo pero simplificado para que cualquiera pueda diseñar de manera optima su propio foro.');
-define('LICENSE', 'XEBB es de codigo abierto y gratuito, por lo que cualquiera puede obtenerlo sin tener que pagar, darle uso, modificarlo y adaptarlo para sus necesidades sin necesidad de pedirselo al autor del software.');
 
-define('FORUM_URL', 'http://localhost/PHPBBNEW/');
+define('FORUM_URL', 'http://localhost/XEBB/');
 define('PHPMAILER_HOST', '');
 define('PHPMAILER_USER', '');
 define('PHPMAILER_PASS', '');
