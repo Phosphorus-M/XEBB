@@ -4,7 +4,7 @@
         <div class="media-container-row content mbr-white">
             <div class="col-md-3 col-sm-4">
                 <div class="mb-3 img-logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="assets/images/footer-logo-120x124.png" alt="<?php echo FORUM_NAME; ?>" title="<?php echo FORUM_NAME; ?>" media-simple="true">
                     </a>
                 </div>

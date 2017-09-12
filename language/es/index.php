@@ -59,8 +59,12 @@ $lang = array_merge($lang, array(
 	'not_agree_terms' => '¿No estás de acuerdo con los términos?',
 	'if_you_dont_agree_terms' => 'Parece que no puedes completar el registro si no aceptas los términos...',
 	//Reset Pass Process
-	'' => 'Revisa tu correo',
-	'' => 'Te hemos mandado el link para adquirir una nueva contraseña a tu mail...'
+	'check_your_email' => 'Revisa tu correo',
+	'acquire_a_new_password' => 'Te hemos mandado el link para adquirir una nueva contraseña a tu mail...',
+	'be_patient' => 'Se paciente...',
+	'an_email_will_soon_be_sent' => 'En breve se enviara un correo a tu mail...',
+	'you_forgot_that' => 'Te quedo eso de ahí...',
+	'you_must_fill_in_the_empty_field' => 'Debes rellenar el campo vacio... si... el unico que hay...',
 	)
 );
 ?>

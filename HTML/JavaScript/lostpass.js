@@ -1,4 +1,4 @@
-function goLostpass(check_your_email,) {
+function goLostpass(check_your_email, acquire_a_new_password, be_patient, an_email_will_soon_be_sent, you_forgot_that, you_must_fill_in_the_empty_field) {
     var connect, form, response, result, email;
     email = __('email_lostpass').value;
     if(email != ''){
@@ -19,8 +19,8 @@ function goLostpass(check_your_email,) {
             }else if(connect.readyState != 4){
                 result = '<div class="alert alert-dismissible alert-warning">';
                 result += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-                result += '<h4>Se pasiente...</h4>';
-                result += '<p><strong>En breve se enviara un correo a tu mail...</strong></p>';
+                result += '<h4>'+ be_patient +'</h4>';
+                result += '<p><strong>'+ an_email_will_soon_be_sent +'</strong></p>';
                 result += '</div>';
                 __('_AJAX_LOSTPASS_').innerHTML = result;
             }
@@ -31,8 +31,8 @@ function goLostpass(check_your_email,) {
     }else{
         result = '<div class="alert alert-dismissible alert-danger">';
         result += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
-        result += '<h4>Te quedo eso de ahí...</h4>';
-        result += '<p><strong>Debes rellenar el campo vacio... si... el unico que hay...</strong></p>';
+        result += '<h4>'+ you_forgot_that +'</h4>';
+        result += '<p><strong>'+ you_must_fill_in_the_empty_field +'</strong></p>';
         result += '</div>';
         __('_AJAX_LOSTPASS_').innerHTML = result;
     }

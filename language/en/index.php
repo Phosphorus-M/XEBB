@@ -61,6 +61,10 @@ $lang = array_merge($lang, array(
 	//Reset Pass Process
 	'check_your_email' => 'Check your email',
 	'acquire_a_new_password ' => 'We have sent you the link to adquire a new password to your mail...',
+	'be_patient' => 'Be patient...',
+	'an_email_will_soon_be_sent' => 'An email will soon be sent to your mail ...',
+	'you_forgot_that' => 'You forgot of that thing of there...',
+	'you_must_fill_in_the_empty_field' => 'You must fill in the empty field... yes... the only one there is...',
 	)
 );
 

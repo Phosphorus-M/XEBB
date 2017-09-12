@@ -12,7 +12,7 @@
               <label for="usrname"><span class="glyphicon glyphicon-enveloper"></span><?php echo $lang['email']; ?></label>
               <input type="email" class="form-control" id="email_lostpass" placeholder="<?php echo $lang['enter_mail']; ?>">
             </div>
-            <button type="button" class="btn btn-default btn-success btn-block" onclick="goLostpass()"><span class="glyphicon glyphicon-off"></span><?php echo $lang['restore']; ?></button>
+            <button type="button" class="btn btn-default btn-success btn-block" onclick="goLostpass('<?php echo $lang['check_your_email']; ?>', '<?php echo $lang['acquire_a_new_password']; ?>', '<?php echo $lang['be_patient']; ?>', '<?php echo $lang['an_email_will_soon_be_sent'];  ?>', '<?php echo $lang['you_forgot_that']; ?>', '<?php echo $lang['you_must_fill_in_the_empty_field']; ?>')" ><span class="glyphicon glyphicon-off"></span><?php echo $lang['restore']; ?></button>
           </div>
         </div>
         <div class="modal-footer">
