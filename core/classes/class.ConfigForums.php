@@ -40,21 +40,21 @@ class ConfigForums{
   }
 
   public function Add(){
-    $this->Errors('?view=configforums&mode=add&error=', true);
+    $this->Errors('?view=admin&section=configforums&mode=add&error=', true);
     $this->db->query("INSERT INTO forums (name, description, id_categoria, status) VALUES ('$this->name', '$this->description', '$this->category', '$this->status');");
     echo $this->name, '<br/> ', $this->description, '<br/> ', $this->status, '<br/> ',$this->categoria;
-    header('location: ?view=configforums&mode=add&success=true');
+    header('location: ?view=admin&section=configforums&mode=add&success=true');
   }
   public function Edit(){
     $this->id = intval($_GET['id']);
-    $this->Errors('?view=configforums&mode=edit&id='. $this->id .'&error=');
+    $this->Errors('?view=admin&section=configforums&mode=edit&id='. $this->id .'&error=');
     $this->db->query("UPDATE forums SET name='$this->name', description='$this->description', id_categoria='$this->category', status='$this->status' WHERE id='$this->id';");
-    header('location: ?view=configforums&mode=edit&id='. $this->id .'&success=true');
+    header('location: ?view=admin&section=configforums&mode=edit&id='. $this->id .'&success=true');
   }
   public function Delete(){
     $this->id = intval($_GET['id']);
     $this->db->query("DELETE FROM forums WHERE id='$this->id';");
-    header('location: ?view=configforums&success=true');
+    header('location: ?view=admin&section=configforums&success=true');
   }
   public function __destruct(){
     $this->db->close();

@@ -32,9 +32,8 @@ require('core/bin/functions/LostpassTemplate.php');
 require('core/bin/functions/Categories.php');
 require('core/bin/functions/Forums.php');
 require('core/bin/functions/FriendlyURL.php');
-/*
+
 $_categories = Categories();
 $_forums = Forums();
-*/
 $_users = Users();
  ?>

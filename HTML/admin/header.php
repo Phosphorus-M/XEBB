@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/mobirise/css/style.css">
 <link rel="stylesheet" href="assets/theme/css/style.css">
+<link rel="stylesheet" href="assets/forum/format.css">
 <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">

@@ -24,9 +24,9 @@ class Categories {
   }
 
   public function Add() {
-    $this->Errors('?view=categories&mode=add&error=');
+    $this->Errors('?view=admin&section=categories&mode=add&error=');
     $this->db->query("INSERT INTO categories (name) VALUES ('$this->name');");
-    header('location: ?view=categories&mode=add&success=true');
+    header('location: ?view=admin&section=categories&mode=add&success=true');
   }
 
   public function Edit() {
@@ -41,7 +41,7 @@ class Categories {
     $q = "DELETE FROM categories WHERE id='$this->id';";
     $q .= "DELETE FROM forums WHERE id_categoria='$this->id';";
     $this->db->multi_query($q);
-    header('location: ?view=categories');
+    header('location: ?view=admin&section=categories');
   }
 
   public function __destruct() {

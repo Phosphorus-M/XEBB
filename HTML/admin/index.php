@@ -11,6 +11,7 @@ if(file_exists('language/'.substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0,2).'/')){
 if(isset($_GET['view'])){
   if(file_exists('core/controllers/' . strtolower($_GET['view']) . 'Controller.php')){
     include $language.'/'. strtolower($_GET['view']) .'.php';
+    include $language.'/index.php';
   }
 } else {
   include $language.'/index.php';
