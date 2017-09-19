@@ -11,6 +11,10 @@ This application is opensource software released under the GPL v2 License. Refer
 
 Changes made:
 ==============
+Sep 19, 2017.
+- Simple ACP.
+- Management of forums and categories.
+- More English and Spanish.
 
 Sep 7, 2017.
 - Support multi language, very simple.
