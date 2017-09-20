@@ -5,12 +5,12 @@
 <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 <meta name="description" content="">
 <title><?php echo FORUM_NAME;?></title>
+<link rel="stylesheet" href="assets/icons/mobirise-icons/mobirise-icons.css">
+<link rel="stylesheet" href="assets/forum/format.css">
+<link rel="stylesheet" href="assets/navbar/navbar.css">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&subset=cyrillic,latin,greek,vietnamese">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/mobirise/css/style.css">
 <link rel="stylesheet" href="assets/theme/css/style.css">
-<link rel="stylesheet" href="assets/forum/format.css">
-<link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
 <script src="HTML/JavaScript/generales.js" ></script>

@@ -21,7 +21,85 @@
 	          ';
 	        }
 	    ?>
+			<ol class="breadcrumb">
+	      <li><a href="?view=index"><i class="fa fa-home"></i> Inicio</a></li>
+	    </ol>
 
-	</div>
+			<?php
+
+			if(false != $_categories) {
+			  $prepare_sql = $db->prepare("SELECT id FROM forums WHERE id_categoria = ? ;");
+			  $prepare_sql->bind_param('i',$id_categoria);
+			  foreach($_categories as $id_categoria => $array_categoria) {
+			    $prepare_sql->execute();
+			    $prepare_sql->store_result();
+			    echo '<table><tbody class="row categorias_con_foros">
+							<tr>
+									<td id="categories" class="title_category">'.$_categories[$id_categoria]['name'].'</td>
+									</tr>
+									</tbody></table>
+									<table>
+					';
+			    if ($prepare_sql->num_rows() > 0 ) {
+			      $prepare_sql->bind_result($id_del_foro);
+			        while($prepare_sql->fetch()) {
+			          if($_forums[$id_del_foro]['status'] == 1) {
+			              $extension = '.png';
+			            } else {
+			              $extension = '_bloqueado.png';
+			            }
+
+			          echo '<thead>
+								  <tr>
+								    <th scope="col" class="fotito" ></th>
+								    <th scope="col">Foro y description</th>
+								    <th scope="col">Temas y respuestas</th>
+								    <th scope="col">Last Menssage</th>
+								  </tr>
+								</thead><tbody>
+								  <tr>
+								    <td>
+			                <img src="assets/forum/foros/foro_leido'.$extension.'" />
+											</td>
+									    <td data-label="Foro y description">
+			                <a href="forum/'.FriendlyURL($_forums[$id_del_foro]['id'],$_forums[$id_del_foro]['name']).'" >'.$_forums[$id_del_foro]['name'].'</a><br />
+			                '.$_forums[$id_del_foro]['description'].'
+			              </td>
+			              <td data-label="Temas y respuestas">
+			                '.number_format($_forums[$id_del_foro]['num_of_topics'],0,',','.').' Temas<br />
+			                '.number_format($_forums[$id_del_foro]['num_of_menssages'],0,',','.').' Mensajes
+			              </td>
+			              <td data-label="Last Menssage">
+			                <a href="#">Ultimo mensaje acá texto largo</a>
+			              </td>
+			            </tr>
+									</tbody>';
+			          }
+			    }else{
+			      echo '<tbody class="row categorias_con_foros">
+			          <tr>
+			              <td class="row foros">
+			                  No existe ningun foro.
+				              </td>
+										</tr>
+										</tbody>';
+			    }
+			    echo '</table>';
+			  }
+			  $prepare_sql->close();
+
+			} else {
+			  echo '<table>
+				<tbody class="row categorias_con_foros">
+						<tr>
+								<td class="row foros" style="line-height: 37px;">No existe ninguna categoría</td>
+								</tr>
+								</tbody>
+								</table>';
+			}
+			?>
+
+
+							</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </section>
