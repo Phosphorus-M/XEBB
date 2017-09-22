@@ -1,5 +1,7 @@
-<section class="mbr-section mbr-after-navbar section-table cid-qtIRYU0Mfo" id="table1-p" data-bg-video="http://www.youtube.com/watch?v=A7ZkZazfvao" data-rv-view="514">
+<section class="features8 cid-qvVl2f6Vdi" data-bg-video="http://www.youtube.com/watch?v=A7ZkZazfvao" id="features8-x" data-rv-view="17">
 	<br><br><br><br>
+	<div class="row container">
+		<br><br><br><br><br><br><br>
 	<?php
 	if(isset($_GET['error'])) {
 			echo '<div class="alert alert-dismissible alert-danger">'. $lang['user_not_activated'] .'.</div>';
@@ -8,24 +10,22 @@
 			echo '<div class="alert alert-dismissible alert-success">' . $lang['user_activated'] . '</div>';
 	}
 	?>
-	<div class="row container">
+<ol class="breadcrumb">
+    <?php
 
-	    <?php
 	        if(isset($_SESSION['forum_id']) and $_users[$_SESSION['forum_id']]['permisos'] >= 2) {
-	          echo '
-	          <div class="pull-right">
-	            <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
-	              <a class="mbr-buttons__btn btn btn-danger" href="?view=admin">PANEL DE ADMINISTRACIÓN</a>
-	            </li></ul></div>
-	          </div>
-	          ';
+	          echo '<div class="pull-right">
+	 							<ul class=""><li class="mbr-navbar__item">
+	              <a class="btn btn-danger" href="?view=admin">PANEL DE ADMINISTRACIÓN</a>
+	            </li></ul>
+		          </div>';
 	        }
 	    ?>
-			<ol class="breadcrumb">
+
 	      <li><a href="?view=index"><i class="fa fa-home"></i> Inicio</a></li>
 	    </ol>
 
-			<?php
+		<?php
 
 			if(false != $_categories) {
 			  $prepare_sql = $db->prepare("SELECT id FROM forums WHERE id_categoria = ? ;");
@@ -38,8 +38,7 @@
 									<td id="categories" class="title_category">'.$_categories[$id_categoria]['name'].'</td>
 									</tr>
 									</tbody></table>
-									<table>
-					';
+									<table>';
 			    if ($prepare_sql->num_rows() > 0 ) {
 			      $prepare_sql->bind_result($id_del_foro);
 			        while($prepare_sql->fetch()) {
@@ -97,9 +96,7 @@
 								</tbody>
 								</table>';
 			}
-			?>
-
-
-							</div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		?>
+	</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </section>

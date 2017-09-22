@@ -803,7 +803,7 @@
                         }
                     );
                 }
-            }
+            }    
         }
     }
 
@@ -858,11 +858,11 @@
     function initCountdown() {
         $(".countdown:not(.countdown-inited)").each(function() {
             $(this).addClass('countdown-inited').countdown($(this).attr('data-due-date'), function(event) {
-
+                
                 var $days = $(event.target).closest('.countdown-cont').find('div.daysCountdown').attr('title');
                 var $hours = $(event.target).closest('.countdown-cont').find('div.hoursCountdown').attr('title');
                 var $minutes = $(event.target).closest('.countdown-cont').find('div.minutesCountdown').attr('title');
-                var $seconds = $(event.target).closest('.countdown-cont').find('div.secondsCountdown').attr('title');
+                var $seconds = $(event.target).closest('.countdown-cont').find('div.secondsCountdown').attr('title');             
                 $(this).html(
                     event.strftime([
                         '<div class="row">',
@@ -984,17 +984,17 @@
     function setActiveCarouselItem(card){
        var $target = $(card).find('.carousel-item:first');
        $target.addClass('active');
-    }
+    } 
 
     function initTestimonialsCarousel(card){
         var $target = $(card),
-            $carouselID = $target.attr('ID') +"-carousel";
+            $carouselID = $target.attr('ID') +"-carousel"; 
 
         $target.find('.carousel').attr('id',$carouselID);
         $target.find('.carousel-controls a').attr('href','#'+$carouselID);
-        setActiveCarouselItem($target);
+        setActiveCarouselItem($target);  
     }
-
+    
     if (isBuilder) {
         $(document).on('add.cards', function(event) {
             if ($('.testimonials-slider').length != 0) {
@@ -1034,20 +1034,20 @@
             if (!$iscollapsing.hasClass('collapsing')) {
                 if ($id.indexOf('toggle') != -1){
                     if ($(this).hasClass('collapsed')) {
-                        $(this).find('span.sign').removeClass('mbri-arrow-down').addClass('mbri-arrow-up');
+                        $(this).find('span.sign').removeClass('mbri-arrow-down').addClass('mbri-arrow-up'); 
                     }
                     else{
-                        $(this).find('span.sign').removeClass('mbri-arrow-up').addClass('mbri-arrow-down');
+                        $(this).find('span.sign').removeClass('mbri-arrow-up').addClass('mbri-arrow-down'); 
                     }
                 }
                 else if ($id.indexOf('accordion')!=-1) {
                     var $accordion =  $(this).closest('.accordionStyles ');
-
+                
                     $accordion.children('.card').each(function() {
-                        $(this).find('span.sign').removeClass('mbri-arrow-up').addClass('mbri-arrow-down');
+                        $(this).find('span.sign').removeClass('mbri-arrow-up').addClass('mbri-arrow-down'); 
                     });
                     if ($(this).hasClass('collapsed')) {
-                        $(this).find('span.sign').removeClass('mbri-arrow-down').addClass('mbri-arrow-up');
+                        $(this).find('span.sign').removeClass('mbri-arrow-down').addClass('mbri-arrow-up'); 
                     }
                 }
             }
@@ -1124,7 +1124,7 @@
             curIndex = curItem.index();
         }
         var item = $($target.closest('.carousel-inner').find('.carousel-item')[curIndex]).find('img')[0];
-
+                        
         if ($target.parents('.clonedCol').length > 0) {
             item.click();
         }
@@ -1137,7 +1137,7 @@
             }
             initTestimonialsCarousel(event.target);
             initClientCarousel(event.target);
-            if (event.type === 'add') {
+            if (event.type === 'add') {       
                 $(event.target).on('slide.bs.carousel', function() {
                     updateClientCarousel(event.target);
                 });
@@ -1154,7 +1154,7 @@
             if (paramName=='slidesCount'){
                 if ($(event.target).find('.carousel-item.active').length==0) {
                     setActiveCarouselItem(event.target);
-                }
+                }                
             }
             initClientCarousel(event.target);
             updateClientCarousel(event.target);
@@ -1178,6 +1178,53 @@
             initTestimonialsCarousel($(this));
             initClientCarousel($(this));
         });
+    }
+
+// Table Block;
+    function getRowCount(card){
+        var $tbodyRows = $(card).find('.table tbody tr').length;
+        $(card).find('.dataTables_info').text('Showing '+$tbodyRows+' entries');
+    }
+
+    function initTable(card,isSearch){
+        var $target = $(card);
+            $target.find('table').dataTable({
+            retrieve:true,
+            paging:false,
+            aaSorting:[],
+            scrollX:true,
+            searching:isSearch,
+            info: isSearch,
+            language: {
+                "search": "Search:",
+                "info": "Showing" + ' _END_ ' + "entries",
+                "infoEmpty": "Showing" + ' _END_ ' + "entries",
+                "infoFiltered": "(filtered from" + ' _MAX_ ' + "total entries)",
+            }
+        });
+    }
+    
+    if (isBuilder){
+        $(document).on('add.cards',function(event) {
+            if($(event.target).hasClass('section-table')){
+                getRowCount(event.target);
+            }    
+        }).on('changeParameter.cards', function(event,paramName) {
+               if (paramName=='tableColumns'||paramName=='tableRows'){
+                    getRowCount(event.target);          
+               }   
+        });;
+    }
+    else{
+        if($(document).find('section.section-table').length!=0){
+            $('section.section-table').each(function() {
+                var isSearch = $(this).find('table').is('.isSearch');
+                $(this).find('.row.search').remove();
+                $(this).find('.table-wrapper .scroll').removeClass('scroll');
+                $(this).find('.row.info').remove();
+                initTable($(this),isSearch);
+            });
+        }
     }
 
 // Cards With Popup Buttons
