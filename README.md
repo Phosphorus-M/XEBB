@@ -11,6 +11,10 @@ This application is opensource software released under the GPL v2 License. Refer
 
 Changes made:
 ==============
+Sep 22, 2017.
+- Simple FAQ.
+- Fixed the background.
+
 Sep 19, 2017.
 - Simple ACP.
 - Management of forums and categories.

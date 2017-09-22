@@ -1,5 +1,6 @@
 <section class="mbr-section mbr-after-navbar section-table cid-qtIRYU0Mfo" id="table1-p" data-bg-video="http://www.youtube.com/watch?v=A7ZkZazfvao" data-rv-view="514">
 	<br><br><br><br>
+	<div class="row container">
 	<?php
 	if(isset($_GET['error'])) {
 			echo '<div class="alert alert-dismissible alert-danger">'. $lang['user_not_activated'] .'.</div>';
@@ -8,7 +9,7 @@
 			echo '<div class="alert alert-dismissible alert-success">' . $lang['user_activated'] . '</div>';
 	}
 	?>
-<div class="row container">
+
 <table width="100%" cellspacing="0" cellpadding="5" border="0">
 <tbody><tr>
 <td valign="top">

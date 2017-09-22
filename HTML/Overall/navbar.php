@@ -23,7 +23,7 @@
                                 </a>
                               </li>
                               <li class="mbr-navbar__item">
-                                <a class="mbr-buttons__link btn text-white" href="">
+                                <a class="mbr-buttons__link btn text-white" href="?view=faq">
                                   <span class="mbri-question mbr-iconfont mbr-iconfont-btn"></span>
                         &nbsp;FAQ
                                 </a>
