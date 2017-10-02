@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-function FriendlyURL($id, $title){
+function FriendlyURL($id, $title, $forum_id = null){
 	$title = mb_strtolower($title,'UTF-8');
 	$title = trim($title);
 	$title = str_replace(
@@ -46,6 +46,10 @@ function FriendlyURL($id, $title){
         '-',
         $title
     );
+		if(null == $forum_id) {
+		} else {
+			$title = $forum_id . '-' . $title;
+		}
     $friendly_url= $id . '-' . $title;
     return $friendly_url;
 }

@@ -26,12 +26,15 @@ define('PHPMAILER_PORT', 465);
 require('core/classes/class.Connection.php');
 require('core/bin/functions/Users.php');
 
+require('core/bin/functions/BBcode.php');
 require('core/bin/functions/Encrypt.php');
 require('core/bin/functions/EmailTemplate.php');
 require('core/bin/functions/LostpassTemplate.php');
 require('core/bin/functions/Categories.php');
 require('core/bin/functions/Forums.php');
 require('core/bin/functions/FriendlyURL.php');
+require('core/bin/functions/IncreaseViews.php');
+require('core/bin/functions/GetUserStatus.php');
 
 $_categories = Categories();
 $_forums = Forums();

@@ -11,4 +11,4 @@ Deny from all
 
 RewriteEngine on
 RewriteRule ^forum/([0-9]+)\-([a-zA-Z0-9-]*)$ index.php?view=forum&id=$1
-RewriteRule ^thread/([0-9]+)\-([0-9]+)\-([a-zA-Z0-9-]*)$ index.php?view=thread&id=$1&id_foro=$2
+RewriteRule ^thread/([0-9]+)\-([0-9]+)\-([a-zA-Z0-9-]*)$ index.php?view=thread&id=$1&forum_id=$2

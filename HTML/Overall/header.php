@@ -14,4 +14,5 @@
 <link rel="stylesheet" href="assets/theme/css/style.css">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
 <link rel="stylesheet" href="assets/socicon/css/styles.css"/>
+<link rel="stylesheet" href="assets/fontawesome/css/fonts.css">
 <script src="HTML/JavaScript/generales.js" ></script>
