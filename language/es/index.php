@@ -65,6 +65,14 @@ $lang = array_merge($lang, array(
 	'an_email_will_soon_be_sent' => 'En breve se enviara un correo a tu mail...',
 	'you_forgot_that' => 'Te quedo eso de ahí...',
 	'you_must_fill_in_the_empty_field' => 'Debes rellenar el campo vacio... si... el unico que hay...',
+	//Index of forums
+	'ACP' => 'Panel de Adminisración',
+	'dont_exist_no_one_forum' => 'No existe ningún foro',
+	'posts' => 'Mensajes',
+	'thread' => 'Temas',
+	'by' => 'por',
+	'last_post' => 'Ultimo mensaje',
+	'dont_exist_no_one_category' => 'No existe ninguna categoría',
 	)
 );
 ?>

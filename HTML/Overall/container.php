@@ -1,4 +1,4 @@
-<section  height: 100%; class="features8 cid-qvVl2f6Vdi" data-bg-video="http://www.youtube.com/watch?v=A7ZkZazfvao" id="features8-x" data-rv-view="17">
+<section class="features8 cid-qvVl2f6Vdi" data-bg-video="http://www.youtube.com/watch?v=A7ZkZazfvao" id="features8-x" data-rv-view="17" style="min-width: 65rem;">
 	<br><br><br>
 	<div class="container mbr-section__container--isolated">
 
@@ -16,13 +16,13 @@
 		        if(isset($_SESSION['forum_id']) and $_users[$_SESSION['forum_id']]['permisos'] >= 2) {
 		          echo '<div>
 		 							<ul><li class="mbr-navbar__item mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active pull-right">
-		              <a class="btn btn-danger" href="?view=admin">PANEL DE ADMINISTRACIÓN</a>
+		              <a class="btn btn-danger" href="?view=admin">'. mb_strtoupper($lang['ACP'], 'UTF-8') .'</a>
 		            </li></ul>
 			          </div>';
 		        }
 		    ?>
 
-		      <li><a href="?view=index"><i class="fa fa-home"></i> Inicio</a></li>
+		      <li><a href="?view=index"><i class="fa fa-home"></i> <?php echo $lang['Home']; ?></a></li>
 		    </ol>
 
 				<?php
@@ -60,8 +60,8 @@
 																				</td>
 																	    <td class="col-md-2 col-md-push-1 forum"  >
 												                <p>'.$_forums[$id_del_foro]['description'].'<br><hr>
-												               <a href="#">Ultimo mensaje acá texto largo</a> de <a href="#">Autor :D </a><br></p>
-																				<span class="extra" title="Topics, Posts">'.number_format($_forums[$id_del_foro]['num_of_topics'],0,',','.').' Temas, '.number_format($_forums[$id_del_foro]['num_of_menssages'],0,',','.').' Mensajes</span><br>
+												               <a href="#">'. $lang['last_post'] .'</a> '. $lang['by'] .' <a href="#">Autor :D </a><br></p>
+																				<span class="extra" title="'. $lang['thread'] .', '. $lang['posts'] .'">'.number_format($_forums[$id_del_foro]['num_of_topics'],0,',','.').' '. $lang['thread'] .', '.number_format($_forums[$id_del_foro]['num_of_menssages'],0,',','.').' '. $lang['posts'] .' </span><br>
 																			<br></td>
 												            </tr>
 																		</tbody><table></table><hr class="separator-of-forums">';
@@ -70,7 +70,7 @@
 					      echo '<tbody class="row categorias_con_foros">
 					          <tr>
 					              <td class="row foros">
-					                  No existe ningun foro.
+					                  '. $lang['dont_exist_no_one_forum'] .'.
 						              </td>
 												</tr>
 												</tbody>';
@@ -83,7 +83,7 @@
 					  echo '<table>
 						<tbody class="row categorias_con_foros">
 								<tr>
-										<td class="row foros" style="line-height: 37px;">No existe ninguna categoría</td>
+										<td class="row foros" style="line-height: 37px;">'.$lang['dont_exist_no_one_annoucement'] .'.</td>
 										</tr>
 										</tbody>
 										</table>';
