@@ -11,6 +11,18 @@ This application is opensource software released under the GPL v2 License. Refer
 
 Changes made:
 ==============
+Oct 4, 2017.
+- English and Spanish translation of a forum.
+
+Oct 2, 2017.
+- Early responsive view of a forum.
+- Early responsive view of the index.
+
+Sep 23, 2017
+- Very early, basic and bugged forum layout.
+- Some minor changes in styles
+- Forum MVC
+
 Sep 22, 2017.
 - Simple FAQ.
 - Fixed the background.
